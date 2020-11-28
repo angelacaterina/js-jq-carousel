@@ -22,26 +22,36 @@ $(function() {
 function nextImages(){
   var imageActive = $('img.active');
   var imageFirst = $('img.first');
+  var iconActive = $('i.fa-circle.active');
+  var iconFirst = $('i.fa-circle.first');
 
   imageActive.removeClass('active');
+  iconActive.removeClass('active');
 
   if (imageActive.hasClass('last')) {
     imageFirst.addClass('active');
+    iconFirst.addClass('active');
   } else {
     imageActive.next('img').addClass('active');
+    iconActive.next('i').addClass('active');
   }
 }
 
 function prevImages(){
   var imageActive = $('img.active');
   var imageLast = $('img.last');
+  var iconActive = $('i.fa-circle.active');
+  var iconLast = $('i.fa-circle.last');
 
   imageActive.removeClass('active');
+  iconActive.removeClass('active');
 
   if (imageActive.hasClass('first')) {
     imageLast.addClass('active');
+    iconLast.addClass('active');
   } else {
     imageActive.prev('img').addClass('active');
+    iconActive.prev('i').addClass('active');
   }
 }
 
